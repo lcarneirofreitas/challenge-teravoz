@@ -1,0 +1,36 @@
+---
+version: '3.5'
+
+services:
+
+  webhook:
+    container_name: webhook
+    build: .
+    networks:
+      - services_default
+    ports:
+      - "5000:5000"
+    links:
+      - mysql:mysql
+    restart: on-failure
+
+  mysql:
+    container_name: mysql
+    image: mysql:5.6 
+    volumes:
+      #- data:/var/lib/mysql
+      - ./events.sql:/docker-entrypoint-initdb.d/events.sql
+    environment:
+      - MYSQL_ROOT_PASSWORD=root
+      - MYSQL_DATABASES=events
+    networks:
+      - services_default
+    ports:
+      - "3306:3306"
+
+volumes:
+  data:
+
+networks:
+  services_default:
+    name: services_default
