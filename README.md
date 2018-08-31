@@ -34,6 +34,13 @@ vagrant ssh
 sudo su - && docker logs -f tgibf
 ```
 
+4- Destroy environmnent
+```
+cd webhook/ && vagrant destroy
+
+cd tgibf/ && vagrant destroy
+```
+
 # Next Steps
 
 - event persistence on file
