@@ -17,14 +17,20 @@ cd webhook/ &&
 
 vagrant up
 
+vagrant ssh
+
+sudo su - && docker logs -f webhook
+
 ```
 
 3- Running app tgibf vm
 ```
-cd tgibf &&
+cd tgibf/ &&
 
 vagrant up
-```
 
- 
+vagrant ssh
+
+sudo su - && docker logs -f tgibf
+```
 

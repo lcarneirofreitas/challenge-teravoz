@@ -8,5 +8,7 @@ service docker restart && \
 
 cd /vagrant && \
 docker build -t tgibf . && \
-docker run -d --network="host" --cpus 0.5 --memory 100m --name tgibf tgibf
+# limitando recursos o container cai
+#docker run -d --network="host" --cpus 0.5 --memory 100m --name tgibf tgibf
+docker run -d --network="host" --name tgibf tgibf
 docker ps
