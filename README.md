@@ -38,5 +38,5 @@ sudo su - && docker logs -f tgibf
 
 - event persistence on file
 
-- add nginx as reverse proxy and escalate webhook application
+- add nginx as reverse proxy and scale webhook application
 
