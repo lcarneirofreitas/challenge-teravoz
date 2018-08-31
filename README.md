@@ -34,3 +34,9 @@ vagrant ssh
 sudo su - && docker logs -f tgibf
 ```
 
+# Next Steps
+
+- event persistence on file
+
+- add nginx as reverse proxy and escalate webhook application
+
